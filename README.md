@@ -49,6 +49,24 @@ import Tooltipster from 'react-native-tooltipster';
 ```
 
 # Props
+First thing to note is, since this tooltip component renders native view, so sometimes you may need some extra codes to handle platform-specific styles (usually happens if tooltip position is `left or right`).
+
+Example:
+```tsx
+<Tooltipster
+  text="Normal size arrow"
+  bgColor="#8c2f39"
+  position="left"
+  arrowPositionRules="ALIGN_BUBBLE"
+  padding={{
+    right: Platform.select({
+      ios: 15,
+      android: undefined
+    })
+  }}
+>
+```
+Check out [example folder](./example/src/App.tsx) for complete usage
 
 ## `animation`
 - Description: tooltip show animation
@@ -124,11 +142,11 @@ import Tooltipster from 'react-native-tooltipster';
 
 ## `padding`
 - Description: padding of the tooltip
-- Value: type `{top?: number, right?: number, bottom?: number , left?: number}`. Default `undefined`
+- Value: type `{top?: number, right?: number, bottom?: number , left?: number}`. Default `{top: 10, right: 10, bottom: 10 , left: 10}`
 
 ## `margin`
 - Description: margin of the tooltip
-- Value: type `{top?: number, right?: number, bottom?: number , left?: number}`. Default `undefined`
+- Value: type `{top?: number, right?: number, bottom?: number , left?: number}`. Default `{top: 1, right: 1, bottom: 1 , left: 1}`
 
 ## `dismissOnClick`
 - Description: dismiss the tooltip if click on itself
