@@ -1,7 +1,7 @@
 {
   "name": "react-native-tooltipster",
-  "version": "0.1.0",
-  "description": "Truely native tooltip for your React Native Apps",
+  "version": "1.0.0",
+  "description": "💬 Truely native tooltip for your React Native app 💬",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
